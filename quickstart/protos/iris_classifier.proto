@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+message inputArray {
+    string arr=1;
+}
+
+message outputArray {
+    string arr=1;
+}
+
+service ClassifyIris{
+    rpc classify(inputArray) returns (outputArray);
+}
