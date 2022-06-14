@@ -7,7 +7,7 @@ import json
 
 # Implement service class
 class ClassifyIrisServicer(iris_classifier_pb2_grpc.ClassifyIrisServicer):
-    def classify(self, request, context):
+    def classify(self, request):
         iris_clf = bentoml.sklearn.load_model("iris_clf:latest")
         iris_classifier_input = json.loads(request.arr)
         output_list = iris_clf.predict(iris_classifier_input)
